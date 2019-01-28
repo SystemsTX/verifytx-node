@@ -21,6 +21,5 @@
 		"docts": "^0.2.0",
 		"tslint": "^5.11.0",
 		"typescript": "^3.1.1"
-	},
-	"typings": "index.d.ts"
+	}
 }
