@@ -1,0 +1,26 @@
+{
+	"name": "verifytx-node",
+	"version": "1.0.0",
+	"description": "NodeJS SDK for connecting to verifytx",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"repository": "https://github.com/SystemsTX/verifytx-node",
+	"author": "SystemsTX LLC",
+	"license": "MIT",
+	"scripts": {
+		"dev": "tsc --watch",
+		"build": "tsc",
+		"docts": "docts"
+	},
+	"keywords": [],
+	"dependencies": {
+		"axios": "^0.18.0"
+	},
+	"devDependencies": {
+		"@types/node": "^10.11.3",
+		"docts": "^0.2.0",
+		"tslint": "^5.11.0",
+		"typescript": "^3.1.1"
+	},
+	"typings": "index.d.ts"
+}
