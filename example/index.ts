@@ -2,7 +2,6 @@ import { VerifyTX } from "../";
 
 const App = async () => {
 	try {
-
 		await VerifyTX.getInstance().authorize({
 			api: "https://api.dev.verifytx.com",
 			username: "",
@@ -10,7 +9,6 @@ const App = async () => {
 			client_id: "",
 			client_secret: ""
 		});
-
 		// New vob
 		const vob = await VerifyTX.getInstance().verify({
 			first_name: "John",
@@ -40,7 +38,8 @@ const App = async () => {
 		});
 
 		// Update vob
-		const updated_vob = await VerifyTX.getInstance().update(vob._id, { first_name: "Jane", last_name: "Doe", client_type: "termed" });
+		const updated_vob = await VerifyTX.getInstance().update(vob._id, { first_name: "Jane", last_name: "Doe", client_type: "client" });
+
 	} catch (e) {
 		console.error(e);
 	}
