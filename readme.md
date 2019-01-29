@@ -1,3 +1,8 @@
+# Install
+```bash
+$ npm add verifytx-node
+```
+
 # Documentation
 https://docs.dev.verifytx.com
 
