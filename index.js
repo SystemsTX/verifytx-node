@@ -134,7 +134,7 @@ class VerifyTX {
     providers(search) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                return yield this._request("GET", `${this.options.api}/payers` + search ? `/search/${search}` : ``);
+                return yield this._request("GET", `${this.options.api}/payers` + (search ? `/search/${search}` : ``));
             }
             catch (error) {
                 throw new Error(error);

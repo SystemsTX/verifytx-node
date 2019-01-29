@@ -127,7 +127,7 @@ export class VerifyTX {
 	 */
 	public async providers(search?: string) {
 		try {
-			return await this._request("GET", `${this.options.api}/payers` + search ? `/search/${search}` : ``);
+			return await this._request("GET", `${this.options.api}/payers` + (search ? `/search/${search}` : ``));
 		} catch (error) {
 			throw new Error(error);
 		}
