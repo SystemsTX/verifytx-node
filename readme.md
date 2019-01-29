@@ -2,7 +2,14 @@
 ```bash
 $ npm add verifytx-node
 ```
+# Usage
+```js
+import { VerifyTX } from "verifytx-node"
 
+VerifyTX.getInstance().authorize({
+	...options
+});
+```
 # Documentation
 https://docs.dev.verifytx.com
 
