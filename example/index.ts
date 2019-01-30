@@ -9,12 +9,13 @@ const App = async () => {
 			client_id: "",
 			client_secret: ""
 		});
-		// New vob
+
+		// New vob https://docs.dev.verifytx.com/#new-vob
 		const vob = await VerifyTX.getInstance().verify({
 			first_name: "John",
 			last_name: "Doe",
 			member_id: "VTX123",
-			payer: "",
+			payer_id: "", // payerid from .provider()
 			date_of_birth: "10/22/1991",
 		});
 
