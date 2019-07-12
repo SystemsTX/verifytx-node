@@ -177,13 +177,13 @@ export class VerifyTX {
 	 * Request wrapper
 	 * @param options Axos Request config
 	 */
-	private async _request(method: string, url: string, data?: any) {
+	private async _request(method: any, url: string, data?: any) {
 		try {
 			const response = await axios.request({
 				headers: this._app.access_token ? {
 					"Authorization": `Bearer ${this._app.access_token}`,
 				} : {},
-				method,
+				method: method,
 				url,
 				data
 			});

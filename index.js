@@ -191,7 +191,7 @@ class VerifyTX {
                     headers: this._app.access_token ? {
                         "Authorization": `Bearer ${this._app.access_token}`,
                     } : {},
-                    method,
+                    method: method,
                     url,
                     data
                 });
