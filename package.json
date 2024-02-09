@@ -1,6 +1,6 @@
 {
 	"name": "verifytx-node",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "NodeJS SDK for connecting to verifytx",
 	"main": "index.js",
 	"types": "index.d.ts",
@@ -14,12 +14,11 @@
 	},
 	"keywords": [],
 	"dependencies": {
-		"axios": "^0.21.1"
+		"axios": "^1.6.7"
 	},
 	"devDependencies": {
-		"@types/node": "^10.11.3",
+		"@types/node": "^20.11.17",
 		"docts": "^0.2.0",
-		"tslint": "^5.11.0",
-		"typescript": "^3.1.1"
+		"typescript": "^5.3.3"
 	}
 }

@@ -34,9 +34,9 @@ export class VerifyTX {
 	 */
 	public async view(id: string) {
 		try {
-			return await this._request("GET", `${this.options.api}/vobs/view/${id}`);
+			return await this._request("GET", `${this.options.api}/vobs/${id}`);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -49,16 +49,16 @@ export class VerifyTX {
 			const qs = Object.keys(filter).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(filter[k])}`).join('&');
 			return await this._request("GET", `${this.options.api}/vobs?${qs}`);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
 
 	public async update(id: string, data: object) {
 		try {
-			return await this._request("PUT", `${this.options.api}/vobs/update`, Object.assign({}, data, { _id: id }));
+			return await this._request("PUT", `${this.options.api}/vobs/${id}`, data);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -70,7 +70,7 @@ export class VerifyTX {
 		try {
 			return await this._request("DELETE", `${this.options.api}/vobs/delete/${id}`);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -80,9 +80,9 @@ export class VerifyTX {
 	 */
 	public async reverify(id: string) {
 		try {
-			return await this._request("GET", `${this.options.api}/vobs/reverify/${id}`);
+			return await this._request("POST", `${this.options.api}/vobs/verify`, { _id: id });
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -94,7 +94,7 @@ export class VerifyTX {
 		try {
 			return await this._request("POST", `${this.options.api}/vobs/verify`, data);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -104,9 +104,9 @@ export class VerifyTX {
 	 */
 	public async history(id: string) {
 		try {
-			return await this._request("GET", `${this.options.api}/vobs/history/${id}`);
+			return await this._request("GET", `${this.options.api}/vobs/${id}/history`);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -117,7 +117,7 @@ export class VerifyTX {
 		try {
 			return await this._request("GET", `${this.options.api}/vobs/relations`);
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -129,7 +129,7 @@ export class VerifyTX {
 		try {
 			return await this._request("GET", `${this.options.api}/payers` + (search ? `/search/${search}` : ``));
 		} catch (error) {
-			throw new Error(error);
+			throw new Error(String(error));
 		}
 	}
 
@@ -149,8 +149,8 @@ export class VerifyTX {
 
 			return this._app;
 
-		} catch (err) {
-			throw new Error(err);
+		} catch (error) {
+			throw new Error(String(error));
 		}
 	}
 	/**
@@ -168,8 +168,8 @@ export class VerifyTX {
 
 			return this._app;
 
-		} catch (err) {
-			throw new Error(err);
+		} catch (error) {
+			throw new Error(String(error));
 		}
 	}
 
@@ -187,9 +187,9 @@ export class VerifyTX {
 				url,
 				data
 			});
-			return response.data.message;
-		} catch (error) {
-			throw new Error(error.response.data.message.error || error.response.data.message || error);
+			return response.data;
+		} catch (error: any) {
+			throw new Error(error.response.data.error || error.response.data.message || error);
 		}
 	}
 }

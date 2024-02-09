@@ -3,7 +3,7 @@ import { VerifyTX } from "../";
 const App = async () => {
 	try {
 		await VerifyTX.getInstance().authorize({
-			api: "https://api.dev.verifytx.com",
+			api: "https://api-dev.verifytx.com",
 			username: "",
 			password: "",
 			client_id: "",
